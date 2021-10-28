@@ -15,6 +15,10 @@ public class Parking5 {
 			int x = sc.nextInt();
 			System.out.print("請選擇車位 ==> ");
 			int no = sc.nextInt();
+			if(no == 5) {
+				System.out.println("這是管理員的專屬車位, 你不可選");
+				continue; // 重新執行迴圈
+			}
 			int car = (int)Math.pow(2, no);
 			switch(x) {
 				case 1: // 停車
