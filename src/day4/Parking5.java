@@ -13,10 +13,17 @@ public class Parking5 {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("1:停車 2:移車 0:Exit ==> ");
 			int x = sc.nextInt();
+			if(x == 0) {
+				break;
+			}
 			System.out.print("請選擇車位 ==> ");
 			int no = sc.nextInt();
 			if(no == 5) {
 				System.out.println("這是管理員的專屬車位, 你不可選");
+				continue; // 重新執行迴圈
+			}
+			if(no > 5) {
+				System.out.println("車位號碼超過範圍, 請重新選擇");
 				continue; // 重新執行迴圈
 			}
 			int car = (int)Math.pow(2, no);
@@ -37,8 +44,6 @@ public class Parking5 {
 						System.out.printf("失敗: 車位 %d 號沒車不可移\n", no);
 					}
 					break;
-				case 0: // Exit
-					break parking;
 				default:
 					System.out.println("選擇錯誤, 請重新選擇 !");
 			}
